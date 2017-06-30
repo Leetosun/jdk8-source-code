@@ -20,28 +20,38 @@ import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
 /**
+ * 
  * The {@code String} class represents character strings. All string literals in Java programs, such as {@code "abc"},
  * are implemented as instances of this class.
+ * ---------------------------------------------------------------------------------------------------------------------------------
+ * String这个类表示字符串.java程序中所有的字符串,就像"abc"这样 作为该类的实例实现
+ * 
  * <p>
  * Strings are constant; their values cannot be changed after they are created. String buffers support mutable strings.
- * Because String objects are immutable they can be shared. For example: <blockquote>
- * 
+ * Because String objects are immutable they can be shared. For example:
+ * ---------------------------------------------------------------------------------------------------------------------------------
+ * 字符串是常量;它们的值在创建后不可改变.字符串缓冲区支持可变字符串.由于字符串不可变,他们可以共享.例如: <blockquote>
+ *
  * <pre>
  * String str = "abc";
  * </pre>
- * 
+ *
  * </blockquote>
  * <p>
- * is equivalent to: <blockquote>
- * 
+ * is equivalent to:
+ * ---------------------------------------------------------------------------------------------------------------------------------
+ * 相当于: <blockquote>
+ *
  * <pre>
  * char data[] = { 'a', 'b', 'c' };
  * String str = new String(data);
  * </pre>
- * 
+ *
  * </blockquote>
  * <p>
- * Here are some more examples of how strings can be used: <blockquote>
+ * Here are some more examples of how strings can be used:
+ * ---------------------------------------------------------------------------------------------------------------------------------
+ * 以下是一些如何使用字符串的例子 <blockquote>
  * 
  * <pre>
  * System.out.println("abc");
