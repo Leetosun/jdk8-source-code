@@ -60,23 +60,29 @@ import java.util.regex.PatternSyntaxException;
  * String c = "abc".substring(2, 3);
  * String d = cde.substring(1, 2);
  * </pre>
- * 
+ *
  * </blockquote>
  * <p>
  * The class {@code String} includes methods for examining individual characters of the sequence, for comparing strings,
  * for searching strings, for extracting substrings, and for creating a copy of a string with all characters translated
  * to uppercase or to lowercase. Case mapping is based on the Unicode Standard version specified by the
  * {@link java.lang.Character Character} class.
+ * ---------------------------------------------------------------------------------------------------------------------------------
+ * String类包括检查各个字符顺序的方法, 用于比较字符串, 用于搜索字符串, 用于提取子字符串, 以及用于创建所有字符翻为大写或小写的字符串副本. 案例映射基于由Character类指定的Unicode标准版本
  * <p>
  * The Java language provides special support for the string concatenation operator (&nbsp;+&nbsp;), and for conversion
  * of other objects to strings. String concatenation is implemented through the {@code StringBuilder}(or
  * {@code StringBuffer}) class and its {@code append} method. String conversions are implemented through the method
  * {@code toString}, defined by {@code Object} and inherited by all classes in Java. For additional information on
  * string concatenation and conversion, see Gosling, Joy, and Steele, <i>The Java Language Specification</i>.
- *
+ * ---------------------------------------------------------------------------------------------------------------------------------
+ * Java语言对于字符串连接操作提供特殊支持(""+""), 以及其他对象转换为字符串.字符串连接是通过StringBuilder或StringBuffer类中的append方法实现的. 字符串转换通过toString方法实现,
+ * 由Object定义并遗传至Java所有类. 有关字符串连接和转换的其他信息, 请参阅Gosling, Joy, 和Steele, <i>Java语言规范</i>
  * <p>
  * Unless otherwise noted, passing a <tt>null</tt> argument to a constructor or method in this class will cause a
  * {@link NullPointerException} to be thrown.
+ * ---------------------------------------------------------------------------------------------------------------------------------
+ * 除非另有说明, 否则将null参数传递给此类的构造函数或方法中将导致抛出NullPointerException空指针异常
  *
  * <p>
  * A {@code String} represents a string in the UTF-16 format in which <em>supplementary characters</em> are represented
@@ -86,6 +92,8 @@ import java.util.regex.PatternSyntaxException;
  * <p>
  * The {@code String} class provides methods for dealing with Unicode code points (i.e., characters), in addition to
  * those for dealing with Unicode code units (i.e., {@code char} values).
+ *
+ * 由于String使用的是UTF-16格式, 一个Unicode码是16位, 而每个字节是8位, 所以一个Unicode码占两字节. 但是英文由于Unicode只采用了低8位来表示, 所以英文占1字节, 中文占2字节
  *
  * @author Lee Boynton
  * @author Arthur van Hoff
@@ -99,10 +107,10 @@ import java.util.regex.PatternSyntaxException;
  */
 
 public final class String implements java.io.Serializable, Comparable<String>, CharSequence {
-    /** The value is used for character storage. */
+    /** The value is used for character storage.(value用来存储字符) */
     private final char value[];
 
-    /** Cache the hash code for the string */
+    /** Cache the hash code for the string (缓存字符串的哈希码) */
     private int hash; // Default to 0
 
     /** use serialVersionUID from JDK 1.0.2 for interoperability */
