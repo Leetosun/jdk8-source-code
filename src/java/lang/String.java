@@ -113,21 +113,28 @@ public final class String implements java.io.Serializable, Comparable<String>, C
     /** Cache the hash code for the string (缓存字符串的哈希码) */
     private int hash; // Default to 0
 
-    /** use serialVersionUID from JDK 1.0.2 for interoperability */
+    /** use serialVersionUID from JDK 1.0.2 for interoperability (互通性) */
     private static final long serialVersionUID = -6849794470754667710L;
 
     /**
      * Class String is special cased within the Serialization Stream Protocol.
-     *
+     * ---------------------------------------------------------------------------------------------------------------------------------
+     * String类是序列化流协议中的特殊封装
+     * ---------------------------------------------------------------------------------------------------------------------------------
      * A String instance is written into an ObjectOutputStream according to
-     * <a href="{@docRoot}/../platform/serialization/spec/output.html"> Object Serialization Specification, Section 6.2,
-     * "Stream Elements"</a>
+     * ---------------------------------------------------------------------------------------------------------------------------------
+     * 一个String实例被写入ObjectOutputStream中
+     * ---------------------------------------------------------------------------------------------------------------------------------
+     * <a href="{@docRoot}/../platform/serialization/spec/output.html"> Object Serialization Specification(规范), Section
+     * 6.2, "Stream Elements"</a>
      */
     private static final ObjectStreamField[] serialPersistentFields = new ObjectStreamField[0];
 
     /**
      * Initializes a newly created {@code String} object so that it represents an empty character sequence. Note that
      * use of this constructor is unnecessary since Strings are immutable.
+     * ---------------------------------------------------------------------------------------------------------------------------------
+     * 初始化新创建的String对象, 使其代表一个空字符序列. 请注意, 不需要使用此构造函数, 因为String是不可变的
      */
     public String() {
         this.value = "".value;
