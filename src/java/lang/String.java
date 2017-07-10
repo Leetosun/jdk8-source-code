@@ -152,6 +152,8 @@ public final class String implements java.io.Serializable, Comparable<String>, C
      * Initializes a newly created {@code String} object so that it represents the same sequence of characters as the
      * argument; in other words, the newly created string is a copy of the argument string. Unless an explicit copy of
      * {@code original} is needed, use of this constructor is unnecessary since Strings are immutable.
+     * ---------------------------------------------------------------------------------------------------------------------------------
+     * 初始化新创建的String对象, 使其代表与参数相同的字符序列; 换句话说, 新创建的字符串是参数字符串的副本. 除非需要original的显示副本, 否则此构造函数是不必要的, 因为String是不可变的
      *
      * @param original A {@code String}
      */
@@ -164,8 +166,10 @@ public final class String implements java.io.Serializable, Comparable<String>, C
      * Allocates a new {@code String} so that it represents the sequence of characters currently contained in the
      * character array argument. The contents of the character array are copied; subsequent modification of the
      * character array does not affect the newly created string.
+     * ---------------------------------------------------------------------------------------------------------------------------------
+     * 分配一个新的String, 以便它表示当前包含在字符数组参数中的字符序列. 字符数组的内容被复制; 字符数组的后续修改不会影响新创建的字符串
      *
-     * @param value The initial value of the string
+     * @param value The initial value of the string(字符串的初始值)
      */
     public String(char value[]) {
         this.value = Arrays.copyOf(value, value.length);
@@ -176,12 +180,14 @@ public final class String implements java.io.Serializable, Comparable<String>, C
      * {@code offset} argument is the index of the first character of the subarray and the {@code count} argument
      * specifies the length of the subarray. The contents of the subarray are copied; subsequent modification of the
      * character array does not affect the newly created string.
+     * ---------------------------------------------------------------------------------------------------------------------------------
+     * 分配一个新的String, 其中包含字符数组参数的子阵列中的字符. offset参数是子阵列的第一个字符的索引, count参数指定子阵列的长度. 子组的内容被复制; 字符数组的后续修改不会影响新创建的字符串
      *
-     * @param value Array that is the source of characters
-     * @param offset The initial offset
-     * @param count The length
+     * @param value Array that is the source of characters(字符源数组)
+     * @param offset The initial offset(初始偏移量)
+     * @param count The length(长度)
      * @throws IndexOutOfBoundsException If the {@code offset} and {@code count} arguments index characters outside the
-     *             bounds of the {@code value} array
+     *             bounds of the {@code value} array(如果offset和count在数组索引范围之外则下标越界异常)
      */
     public String(char value[], int offset, int count) {
         if (offset < 0) {
@@ -196,7 +202,7 @@ public final class String implements java.io.Serializable, Comparable<String>, C
                 return;
             }
         }
-        // Note: offset or count might be near -1>>>1.
+        // Note: offset or count might be near -1>>>1.偏移或计数可能接近-1>>>1
         if (offset > value.length - count) {
             throw new StringIndexOutOfBoundsException(offset + count);
         }
